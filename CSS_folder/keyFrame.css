@@ -1,0 +1,25 @@
+@keyframes slider {
+    0% {
+        background: linear-gradient(45deg, rgb(60 0 255 / 50%), #13a15878), url(../Image_folder/background_img/Navbar_folder/navbar_bg_1.jpg)no-repeat center center/cover
+    }
+
+    20% {
+        background: linear-gradient(rgba(147, 130, 130, 0.5), #71da72), url(../Image_folder/background_img/Navbar_folder/navbar_bg_4.jpg)no-repeat center center/cover;
+    }
+
+    40% {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), #f4ef83), url(../Image_folder/background_img/Navbar_folder/navbar_bg_3.jpg)no-repeat center center/cover;
+    }
+
+    60% {
+        background: linear-gradient(rgb(0 0 0 / 0%), #66d3a6), url(../Image_folder/background_img/Navbar_folder/navbar_bg_2.jpg)no-repeat center center/cover
+    }
+
+    80% {
+        background: linear-gradient(rgb(36 21 67 / 50%), #000000), url(../Image_folder/background_img/Navbar_folder/navbar_bg_5.jpg)no-repeat center center/cover
+    }
+
+    100% {
+        background: linear-gradient(rgb(0 0 0 / 50%), #7df8c1), url(../Image_folder/background_img/Navbar_folder/navbar_bg_8.jpg)no-repeat center center/cover;
+    }
+}

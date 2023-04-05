@@ -1,0 +1,26 @@
+.none {
+    display: none !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.transition {
+    transition: 0.5s all ease-in-out;
+}
+
+.red {
+        /* border: 2px solid red; */
+        color: red;
+        /* background: #ffadad;*/
+}
+
+.scale {
+    transform: scale(0.8);
+}
+
+.zIndex {
+    /* z-index: -1;
+    position: fixed; */
+}

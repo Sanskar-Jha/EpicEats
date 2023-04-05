@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Bree+Serif&family=Dancing+Script:wght@700&family=El+Messiri:wght@700&family=Englebert&family=IM+Fell+English+SC&family=Kalam:wght@700&family=Lobster&family=Mea+Culpa&family=Poppins:wght@500&display=swap');
+
+.title-heading {
+    font-size: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    /* font-family: 'Baloo Bhai 2', cursive; */
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'IM Fell English SC', serif; */
+    /* font-family: 'Mea Culpa', cursive; */
+    font-family: "Asfalto";
+    font-family: 'IM Fell English SC', serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Kalam', cursive;
+    text-transform: uppercase;
+}
+
+#border {
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.flex {
+    display: flex;
+    align-items: flex-end;
+}
+
+.color {
+    color: green;
+}
+
+.size {
+    font-size: 3rem !important;
+}
+
+.Ex-size {
+    font-size: 4rem !important;
+}
+
+.margin {
+    margin-left: 3rem;
+}
+
+#navbar ul li a.active::after {
+    width: 100%;
+}
+
+#navbar ul li.active::before {
+    width: 100%;
+}

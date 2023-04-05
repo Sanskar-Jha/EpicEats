@@ -1,0 +1,106 @@
+/* navbar hide nav-icon show */
+@media only screen and (max-width: 850px) {
+    #navbar {
+        position: fixed;
+        top: 14px;
+        right: -21rem;
+        transition: 0.5s all ease-in-out;
+        background: linear-gradient(45deg, black, #0000005e);
+        /* background: linear-gradient(269deg, #00000070, #000000d1, #0303034d, transparent, transparent); */
+        border-radius: 10px;
+        height: 100%;
+        /* width: auto; */
+        z-index: 1;
+    }
+
+    #nav-cross-icon{
+        position: fixed;
+        top: 24px;
+        right: 7px;
+    }
+
+    #navbar ul {
+        display: block;
+        padding: 0;
+    }
+
+    #navbar ul li a {
+        padding: 0.1rem 0rem;
+    }
+
+    #head {
+        justify-content: space-between;
+        padding: 0.5rem;
+        align-items: normal;
+    }
+
+    #navbar ul li:hover::before {
+        width: 0%;
+    }
+
+    #navbar ul li.active::before {
+        width: 0%;
+    }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 350px) {
+    .position {
+        right: 35px !important;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    #nav-cross-icon {
+        display: none;
+    }
+}
+
+/* nav-icon hide navbar show  */
+@media only screen and (min-width: 850px) {
+    #nav-icon {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #navbar {
+        position: fixed;
+        top: 57px;
+        right: -20rem;
+    }
+
+    .position {
+        right: -3px !important;
+    }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 690px) {
+    #navbar ul li {
+        padding: 1rem 7rem;
+        /* padding: 1rem 14rem 1rem 27rem; */
+    }
+}
+
+@media only screen and (max-width: 690px) and (min-width: 540px) {
+    #navbar ul li {
+        padding: 1rem 6rem;
+    }
+}
+
+@media only screen and (max-width: 540px) and (min-width: 390px) {
+    #navbar ul li {
+        padding: 1rem 4rem;
+    }
+}
+
+@media only screen and (max-width: 390px) and (min-width: 300px) {
+    #navbar ul li {
+        padding: 1rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    #navbar ul li {
+        padding: 1rem 2rem;
+    }
+}

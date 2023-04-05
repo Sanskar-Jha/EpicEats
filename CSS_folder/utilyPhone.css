@@ -1,0 +1,69 @@
+@media only screen and (max-width:688px) {
+    #wrap-rev {
+        flex-wrap: wrap-reverse;
+    }
+}
+
+@media only screen and (max-width:1279px) {
+    #offerBtn p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .title-heading {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    .blog-items {
+        margin: 1rem;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .Email {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width:469px) {
+    .hide-para {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:332px) {
+    .hide-heading {
+        display: none;
+    }
+
+    #heading {
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (min-width:333px) {
+    .h-primary {
+        display: none;
+    }
+
+    .hide-heading {
+        display: block;
+    }
+}
+
+@media only screen and (max-width:370px) {
+    .title-heading {
+        font-size: 1.7rem;
+    }
+
+    .about-para {
+        font-size: 1rem;
+    }
+
+    .h-about {
+        font-size: 2rem;
+    }
+}
