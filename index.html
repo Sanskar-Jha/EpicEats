@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="OUHINe-e_o64c-f8mleab-t5-xlZ7SMXgLVgi4O1Hpk" />
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P5C8B2JB');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta name="description"
+        content="A EpicEats is a combination of different types of foods served together, typically as a single course during a mealtime. A well-balanced EpicEats usually includes a variety of food groups, such as proteins, carbohydrates, fats, vitamins, and minerals.
+    The specific contents of a EpicEats can vary widely depending on factors such as culture, dietary restrictions, personal preferences, and the time of day. For example, a typical breakfast meal might include eggs, toast, and fruit, while a lunch meal might feature a sandwich, salad, and soup. A dinner meal might consist of a protein source such as chicken or fish, along with vegetables and a starch like rice or potatoes.
+    The preparation and presentation of a EpicEats can also vary depending on the occasion and cultural traditions. Some meals may be simple and quick to prepare, while others may require hours of preparation and a careful attention to detail in presentation. A well-prepared meal can not only provide essential nutrients but also satisfy the senses of taste, smell, and sight.
+    In summary, a EpicEats is a combination of foods served together, typically representing a balanced selection of food groups and prepared in a variety of ways to satisfy both nutritional and sensory needs.">
+    <meta name="keywords"
+        content="Combination,Food groups,Nutrients,Balanced,Preparation,Presentation,Culture,Dietary ,restrictions,Personal preferences,Occasion,Taste,Smell,Sight,Protein,Carbohydrates,Fats,Vitamins,Minerals,Breakfast,Lunch,Dinner">
+    <meta name="author" content="Sanskar">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/utiliy.css">
+    <link rel="stylesheet" href="./CSS/keyFrame.css">
+    <link rel="stylesheet" href="./CSS/media query.css">
+    <link rel="icon" type="image/x-icon" href="/Images/logo/logo.png">
+
+    <!-- fontawsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>EpicEats</title>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5C8B2JB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar" class="d-flex justify-around align-center">
+            <div id="nav-logo">
+                <a href="#">
+                    <img src="/Images/logo/logo.png" alt="EpicEats">
+                </a>
+            </div>
+            <div id="nav-container" class="d-flex justify-between align-center">
+                <ul id="navigation" class="d-flex">
+                    <li class="active"><a href="/" class="active">Home</a></li>
+                    <li id="nav-menu">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <a href="#menu">Menu</a>
+                    </li>
+                </ul>
+                <div id="cart" class="d-flex">
+                    <span id="item-num"></span>
+                    <i id="shopping-cart" class="fa-solid fa-cart-shopping"></i>
+                    <i id="profile-icon" class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Side Cart Section -->
+    <div id="add-to-cart">
+        <i id="menu-cross-icon" class="fa-regular fa-circle-xmark fa-xl"></i>
+        <div id="add-cart-item"></div>
+        <div id="checkout">
+            <button type="button" id="checkout-btn">Place your order</button>
+        </div>
+    </div>
+
+    <!-- Form Section  -->
+    <div id="form-section" class="d-flex justify-center align-center">
+        <div id="form-container">
+            <i id="form-cross-icon" class="fa-regular fa-circle-xmark fa-xl"></i>
+            <p class="head-title">Contact</p>
+            <form action="" id="form" class="d-flex justify-center align-center">
+                <input type="text" id="name" placeholder="UserName">
+                <input type="text" id="email" placeholder="Email">
+                <input type="phone" id="phone" placeholder="Phone Number">
+                <input type="text" id="address" placeholder="Your Address">
+
+                <div id="form-submit-btn">
+                    <button type="submit" id="submit-btn">Submit</button>
+                </div>
+            </form>
+
+            <!-- Form message -->
+            <!-- <div id="form-msg" role="alert">
+            <span class="error">Something went wrong.</span>
+        </div> -->
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Hero Left -->
+        <div id="hero-left">
+            <h1 id="h-primary">
+                <p><span style="color: #FF9933; text-shadow: 2px 2px 5px white;">T</span>aste</p>
+                <p>the</p>
+                <p><span style="color: white; text-shadow: 2px 2px 5px black;">D</span>elicious</p>
+                <p><span style="color: #138808; text-shadow: 2px 2px 5px white;">D</span>ifference</p>
+            </h1>
+
+            <div id="p-primary">
+                <p>Vegetarian dishes have a lot of varieties to soothe your taste buds. Veg food can leave you
+                    spellbound depending. Dinner can be with friends, family, or a romantic one with your life partner.
+                </p>
+            </div>
+            <div id="hero-btn">
+                <button type="button" class=""><span></span>Order</button>
+            </div>
+        </div>
+
+        <!-- Hero Right -->
+        <div id="hero-right">
+            <video autoplay loop>
+                <source src="./Images/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote-container">
+        <div id="quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <h1 class="h-about">Taste</h1>
+            <p>Whatever your reason for wanting to eat healthier, meal kits with pre-portioned ingredients and
+                easy-to-follow recipes can eliminate a lot of the stress that comes with trying to eat healthier.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section>
+        <div id="menu">
+            <h2 class="head-title">Menu</h2>
+            <!-- Menu buttons -->
+            <div id="menu-btns">
+                <button type="button" data-filter="Breakfast">Breakfast</button>
+                <button type="button" data-filter="Juice">Juices</button>
+                <button type="button" data-filter="Lunch">Lunch</button>
+                <button type="button" data-filter="Dinner">Dinner</button>
+                <button type="button" data-filter="Special">Special</button>
+            </div>
+            <!-- Menu Items -->
+            <div id="menu-card" class="d-flex justify-center"></div>
+        </div>
+    </section>
+
+    <!-- Review/Client Section -->
+    <section>
+        <div id="client">
+            <h1 class="head-title">What people say</h1>
+            <div id="client-card" class="d-flex justify-center align-center">
+                <div class="client-item">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <div class="client-image">
+                        <img src="./Images/clients/client.jpg" alt="client">
+                        <h4>Bill Johnson</h4>
+                        <p>Client</p>
+                    </div>
+                    <p>“I wish that Factor made it easier to filter by dietary need, especially vegan-friendly dishes. I
+                        would also love to see the service offer a wider variety of cuisines.”</p>
+                </div>
+                <div class="client-item">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <div class="client-image">
+                        <img src="./Images/clients/client1.jpg" alt="client">
+                        <h4>Ashley Fitzgerald</h4>
+                        <p>Client</p>
+                    </div>
+                    <p>"I think the service does a good job at offering a wide range of protein-types and vegetables.
+                        With
+                        that said, I do wish it catered to a wider range of cuisines.”</p>
+                </div>
+                <div class="client-item">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <div class="client-image">
+                        <img src="./Images/clients/client2.jpg" alt="client">
+                        <h4>Aron Wilson</h4>
+                        <p>Client</p>
+                    </div>
+                    <p>"Mosaic Foods frozen meals are not your parents’ microwave dinners (or lunches, or breakfast!)!
+                        You
+                        can taste the difference in the quality of fresh ingredients.!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer" class="d-flex justify-evenly">
+            <div class="footer-card">
+                <div id="footer-logo">
+                    <p>EpicEats</p>
+                </div>
+                <!-- Footer Icons -->
+                <div id="footer-icons" class="d-flex">
+                    <a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy" target="_blank">
+                        <i class="fa-brands fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy" target="_blank">
+                        <i class="fa-brands fa-youtube fa-lg"></i>
+                    </a>
+                    <a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy" target="_blank">
+                        <i class="fa-brands fa-facebook fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-card">
+                <p class="title">About EpicEats</p>
+                <ul class="footer-links">
+                    <li><a href="https://logiclearnner.blogspot.com/p/home.html">Blogs</a></li>
+                    <li><a href="https://sites.google.com/view/adproz/">Today's deals</a></li>
+                    <li><a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy">Subscribe</a></li>
+                    <li id="contact-form"><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <p class="title">Learn More</p>
+                <ul class="footer-links">
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Join Community Section -->
+        <div id="join-community">
+            <p class="head-title">Join Our Community</p>
+            <div id="join-by-email" class="d-flex justify-center align-center">
+                <div id="join-community-email-input">
+                    <label for="">Email</label>
+                    <input type="email" id="join-community-email" placeholder="Enter your email...">
+                </div>
+                <button type="submit" id="join-community-btn">Join</button>
+            </div>
+
+            <!-- Join Message -->
+            <div id="join-msg">
+                <div id="is-join" class="success" role="alert">
+                    <p>Thank you for your interest.</p>
+                </div>
+                <div id="invalid-join" class="error" role="alert">
+                    <p>Something went wrong</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copy Right Section -->
+        <div id="copy-right">
+            <p>Copyright &copy; EpicEats. All rights reserved!</p>
+        </div>
+    </footer>
+
+    <script src="./JavaScript/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+/* @keyframes slider {
+    0% {
+        background: url(../Images/bg/bg1.jpg)no-repeat center center/cover
+    }
+
+    20% {
+        background: url(../Images/bg/bg4.jpg)no-repeat center center/cover;
+    }
+
+    40% {
+        background: url(../Images/bg/bg3.jpg)no-repeat center center/cover;
+    }
+
+    60% {
+        background: url(../Images/bg/bg2.jpg)no-repeat center center/cover
+    }
+
+    80% {
+        background: url(../Images/bg/bg5.jpg)no-repeat center center/cover
+    }
+
+    100% {
+        background: url(../Images/bg/bg8.jpg)no-repeat center center/cover;
+    }
+} */
+
+@keyframes slider {
+    0% {
+        background: linear-gradient(45deg, rgb(60 0 255 / 50%), #13a15878), url(../Images/bg/bg1.jpg)no-repeat center center/cover
+    }
+
+    20% {
+        background: linear-gradient(rgba(147, 130, 130, 0.5), #71da72), url(../Images/bg/bg4.jpg)no-repeat center center/cover;
+    }
+
+    40% {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), #f4ef83), url(../Images/bg/bg3.jpg)no-repeat center center/cover;
+    }
+
+    60% {
+        background: linear-gradient(rgb(0 0 0 / 0%), #66d3a6), url(../Images/bg/bg2.jpg)no-repeat center center/cover
+    }
+
+    80% {
+        background: linear-gradient(rgb(36 21 67 / 50%), #000000), url(../Images/bg/bg5.jpg)no-repeat center center/cover
+    }
+
+    100% {
+        background: linear-gradient(rgb(0 0 0 / 50%), #7df8c1), url(../Images/bg/bg8.jpg)no-repeat center center/cover;
+    }
+}
