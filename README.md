@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EpicEats
 
 A EpicEats is a combination of different types of foods served together, typically as a single course during a mealtime. A well-balanced food meal usually includes a variety of food groups, such as proteins, carbohydrates, fats, vitamins, and minerals.
@@ -19,3 +20,7 @@ A EpicEats is a combination of different types of foods served together, typical
 
 3. Update menu items.
    - Implement filtering functionality.
+=======
+# foodry
+A foodry is a combination of different types of foods served together, typically as a single course during a mealtime. A well-balanced food meal usually includes a variety of food groups, such as proteins, carbohydrates, fats, vitamins, and minerals.
+>>>>>>> ae52a69a9d1bf4e33d8172afe96194b0f10df037
