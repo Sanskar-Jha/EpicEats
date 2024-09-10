@@ -28,62 +28,6 @@ const menu = [
         category: "Dinner",
         quantity: 1
     },
-    // {
-    //     name: "",
-    //     price: 30,
-    //     img: "../Images/Menu/dinner.jpg",
-    //     category: "Special",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 32,
-    //     img: "../Images/Menu/dinner1.jpg",
-    //     category: "Special",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 37,
-    //     img: "../Images/Menu/dinner2.jpg",
-    //     category: "Special",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 39,
-    //     img: "../Images/Menu/dinner3.jpg",
-    //     category: "Dinner",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 41,
-    //     img: "../Images/Menu/dinner4.jpg",
-    //     category: "Dinner",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 21,
-    //     img: "../Images/Menu/dinner5.jpg",
-    //     category: "Dinner",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 36,
-    //     img: "../Images/Menu/dinner6.jpg",
-    //     category: "Dinner",
-    //     quantity: 1
-    // },
-    // {
-    //     name: "",
-    //     price: 29,
-    //     img: "../Images/Menu/dinner7.jpg",
-    //     category: "Dinner",
-    //     quantity: 1
-    // },
     {
         name: "Donut",
         price: 5,
@@ -289,7 +233,7 @@ function addToCart(buttonId) {
     itemNum.innerText = ++cartItemNotificationNum;
 
     if (!cartData) {
-        console.error("Invalid item index:", buttonId);
+        // console.error("Invalid item index:", buttonId);
         return; // Handle invalid item index gracefully
     }
 
@@ -370,7 +314,7 @@ function addQuantity(plusButtonId) {
         cartItems[itemId].quantity++;
         updateCartDisplay();
     } else {
-        console.error("Couldn't find item with ID:", itemId);
+        // console.error("Couldn't find item with ID:", itemId);
     }
 }
 
@@ -391,10 +335,11 @@ function subtractQuantity(minusButtonId) {
         }
         updateCartDisplay();
     } else {
-        console.error("Couldn't find item with ID:", itemId);
+        // console.error("Couldn't find item with ID:", itemId);
     }
 }
 
+// Function to handle delete item from cart
 function cartItemDel(delButtonId) {
     if (delButtonId !== -1) {
         cartItems.splice(delButtonId, 1);
@@ -405,9 +350,10 @@ function cartItemDel(delButtonId) {
         }
         updateCartDisplay();
     } else {
-        console.error("Couldn't find item with ID:", itemId);
+        // console.error("Couldn't find item with ID:", itemId);
     }
 }
+
 updateCartDisplay();
 
 // Menu Cross Icon open
@@ -463,12 +409,12 @@ reqPhone = false;
 reqEmail = false;
 
 name.addEventListener('blur', () => {
-    let regex = /^[a-zA-Z](s?[a-zA-Z(0-9)?]){0,25}$/
+    let regex = /^[a-zA-Z](s?[a-zA-Z0-9\.\-\']{0,24})?$/;
     let str = name.value;
 
     if (regex.test(str)) {
         reqName = true;
-        name.classList.remove('success');
+        name.classList.remove('error');
     } else {
         reqName = false;
         name.classList.add('error');
@@ -476,12 +422,12 @@ name.addEventListener('blur', () => {
 });
 
 phone.addEventListener('blur', () => {
-    let regex = /^[0-9]{10}$/
+    let regex = /^\(?(\d{3})\)?[ .-]?\d{3}[ .-]?\d{4}$/;
     let str = phone.value;
 
     if (regex.test(str)) {
         reqPhone = true;
-        phone.classList.remove('success');
+        phone.classList.remove('error');
     } else {
         reqPhone = false;
         phone.classList.add('error');
@@ -489,12 +435,12 @@ phone.addEventListener('blur', () => {
 });
 
 email.addEventListener('blur', () => {
-    let regex = /^(w+)@(w+).([[a-zA-Z]){0,9}$/;
+    let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let str = email.value;
 
     if (regex.test(str)) {
         reqEmail = true;
-        email.classList.remove('success');
+        email.classList.remove('error');
     } else {
         reqEmail = false;
         email.classList.add('error');
@@ -512,6 +458,11 @@ submitBtn.addEventListener('click', (e) => {
         setTimeout(() => {
             submitBtn.innerText = "Submit";
         }, 3000);
+
+        form.reset();
+        reqName = false;
+        reqPhone = false;
+        reqEmail = false;
     }
     else {
         submitBtn.innerText = "Something went wrong!";
@@ -519,11 +470,6 @@ submitBtn.addEventListener('click', (e) => {
             submitBtn.innerText = "Submit";
         }, 3000);
     }
-
-    form.reset();
-    reqName = false;
-    reqPhone = false;
-    reqEmail = false;
 });
 
 // Join community Section
@@ -533,12 +479,8 @@ isJoin.style.display = 'none';
 invalidJoin.style.display = 'none';
 
 const joinCommunityBtn = document.getElementById('join-community-btn');
-
 joinCommunityBtn.addEventListener('click', () => {
-    if (email.value == null) {
-        invalidJoin.style.display = 'block';
-    }
-    else if (reqEmail == true) {
+    if (document.getElementById('join-community-email').value != '') {
         isJoin.style.display = 'block';
     }
     else {
@@ -550,8 +492,7 @@ joinCommunityBtn.addEventListener('click', () => {
         invalidJoin.style.display = 'none';
     }, 3000);
 
-    this.email.value = "";
-    reqEmail = false;
+    document.getElementById('join-community-email').value = "";
 });
 
 // Stop scrolling when Contact form appears
