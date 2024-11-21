@@ -1,0 +1,203 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Moderustic:wght@300..800&family=Oswald:wght@200..700&display=swap');
+
+/* CSS Rest */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* OverWrite */
+#nav-container {
+    width: auto !important;
+}
+
+.footer-links {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+#nav-logo {
+    margin-right: 2rem;
+}
+
+#nav-container {
+    width: auto;
+}
+
+#nav-container ul li a {
+    font-size: 15px;
+}
+
+/* Header */
+header {
+    padding: 0 1rem;
+}
+
+/* Form Section */
+#form-container {
+    background: #6c757d;
+    max-width: 80vw;
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+#form-btns {
+    border-bottom: 4px solid #31b18d;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#form-btns button {
+    position: relative;
+    padding: 8px 22px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#form-btns button::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: all 0.5s;
+}
+
+#form-btns button:hover::after {
+    width: 100%;
+}
+
+#form-btns button.active::after {
+    width: 100%;
+}
+
+.form {
+    margin: 1rem;
+}
+
+.form input {
+    padding: 11px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form button[type="submit"] {
+    padding: 11px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 3px solid #31b18d;
+    background: white;
+    cursor: pointer;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.form button[type="submit"]:hover {
+    border: 2px solid white;
+    background: #31b18d;
+    color: white;
+}
+
+#login-form p a {
+    color: white;
+}
+
+#msg {
+    color: white;
+}
+
+/* Dark mode */
+.dark-mode-btn {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+    transition: all 0.3s linear;
+}
+
+.dark-mode-btn::after {
+    content: "";
+    position: absolute;
+    top: .1rem;
+    left: .1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s linear;
+}
+
+
+input[type="checkbox"]:checked + .dark-mode-btn:after {
+    translate: 2rem 0;
+}
+
+input[type="checkbox"]:checked + .dark-mode-btn {
+    background-color: rgb(69, 69, 69);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Media Queries */
+/* Over Write */
+@media screen and (min-width: 1490px) {
+    #form-container {
+        width: 30rem !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        padding: unset;
+    }
+
+    #navbar {
+        justify-content: start !important;
+    }
+
+    #nav-container {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    #form-btns button,
+    .form input,
+    .form button[type="submit"] {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    header {
+        padding: unset !important;
+    }
+
+    #navbar {
+        flex-direction: row !important;
+    }
+
+    #nav-container {
+        margin-top: unset !important;
+    }
+}

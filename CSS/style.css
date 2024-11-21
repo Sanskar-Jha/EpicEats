@@ -3,127 +3,13 @@
 
 /* CSS Reset */
 * {
-    margin: 0rem;
-    padding: 0rem;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-}
-
-/* Navigation Section */
-header {
-    /* background: #6e6e6e; */
-    background: #31b18d;
-    position: sticky;
-    top: 0px;
-    z-index: 2;
-    font-family: "Oswald", sans-serif;
-}
-
-#nav-logo a img {
-    width: 7rem;
-    border-radius: 12px;
-    /* filter: drop-shadow(0px 0px 15px white); */
-    /* box-shadow: 0px 0px 16px #31b18d; */
-}
-
-#nav-logo:hover {
-    /* transition: all 0.5s; */
-    /* transform: rotate(360deg); */
-    /* transform: rotate3d(1, 1, 1, 360deg); */
-}
-
-#nav-container {
-    width: 43%;
-}
-
-#navigation {
-    list-style: none;
-    gap: 22px;
-}
-
-#navigation li {
-    position: relative;
-    cursor: pointer;
-}
-
-#navigation li a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: white;
-    text-transform: uppercase;
-    position: relative;
-}
-
-#nav-menu i {
-    font-size: 1.5rem;
-    color: white;
-    margin-right: 7px;
-}
-
-#navbar ul li::before {
-    content: '';
-    height: 3px;
-    width: 0%;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    right: 0;
-    bottom: 28px;
-    transition: all 0.5s;
-}
-
-#navbar ul li:hover::before {
-    width: 100%;
-}
-
-#navbar ul li a::after {
-    content: '';
-    height: 3px;
-    width: 0%;
-    background: rgb(255, 255, 255);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: all 0.5s;
-}
-
-#navbar ul li a:hover::after {
-    width: 100%;
-}
-
-#navbar ul li a.active::after {
-    width: 100%;
-}
-
-#navbar ul li.active::before {
-    width: 100%;
-}
-
-#shopping-cart,
-#profile-icon {
-    color: white;
-    font-size: 1.5rem;
-    gap: 10px;
-}
-
-#cart {
-    gap: 16px;
-}
-
-#item-num {
-    position: relative;
-    bottom: 15px;
-    left: 50px;
-    background: red;
-    color: white;
-    font-size: 14px;
-    /* flex: 0 0 21%; */
-    width: 100%;
-    padding: 3px;
-    z-index: 1;
-    /* display: none; */
 }
 
 /* Side Cart Section */
@@ -203,7 +89,7 @@ header {
     position: absolute;
     top: 32px;
     z-index: 2;
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
     visibility: hidden;
     transform: translateY(-41rem);
@@ -302,7 +188,7 @@ header {
 #hero-btn button,
 #join-community-btn,
 #submit-btn,
-#checkout-btn {
+#place-order-btn {
     padding: 9px 2rem;
     font-size: 1rem;
     border-radius: 34px;
@@ -330,7 +216,7 @@ header {
 #hero-btn button:hover,
 .add-to-cart:hover,
 #submit-btn:hover,
-#checkout-btn:hover {
+#place-order-btn:hover {
     box-shadow: 0px 0px 18px 7px white;
 }
 
@@ -349,6 +235,57 @@ header {
     padding: 10px;
     border: 2px solid black;
     box-shadow: 0px 0px 50px 3px coral;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+#loader p {
+    font-size: 3rem;
+    border-top: 10px solid #31b18d;
+    border-radius: 10px;
+    text-align: end;
+    padding: 0 20px;
+}
+
+/* Display Form */
+#loader-form {
+    background: #a6b5b1;
+    border: 4px solid white;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+#loader-form input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+#loader-btn {
+    border: 2px solid #31b18d;
+    background: #31b18d;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#loader-btn:hover {
+    background: #0b805f;
 }
 
 /* Quote Section */
@@ -520,74 +457,6 @@ header {
     font-size: 1.2rem;
 }
 
-/* Footer Section */
-footer {
-    background: #31b18d;
-}
-
-#footer {
-    padding: 3rem;
-}
-
-#footer-logo p {
-    color: white;
-    font-size: 2rem;
-    text-decoration: underline;
-    font-family: "Agbalumo", system-ui;
-}
-
-/* Footer Icons */
-#footer-icons {
-    gap: 11px;
-    padding: 1rem;
-}
-
-#footer-icons a {
-    cursor: pointer;
-    color: white;
-    transition: all 0.5s ease-in-out;
-    text-decoration: none;
-}
-
-#footer-icons a:hover {
-    transform: translateY(-6px);
-}
-
-#footer-icons a:nth-child(1):hover {
-    color: black
-}
-
-#footer-icons a:nth-child(2):hover {
-    color: #FF0000;
-}
-
-#footer-icons a:nth-child(3):hover {
-    color: #1877F2;
-}
-
-/* Footer Cards */
-.footer-card {
-    text-align: center;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    padding: 6px;
-}
-
-.footer-links li a {
-    text-decoration: none;
-    color: rgb(255 255 255 / 61%);
-    font-family: "Oswald", sans-serif;
-}
-
-.footer-links li a:hover {
-    color: white;
-}
-
 /* Join Community */
 #join-community {
     background: rgb(181 175 175 / 55%);
@@ -636,12 +505,4 @@ footer {
     width: fit-content; */
     text-align: center;
     font-family: "Oswald", sans-serif;
-}
-
-/* Copyright */
-#copy-right {
-    background-color: #31b18d;
-    color: white;
-    padding: 10px 0px;
-    text-align: center;
 }

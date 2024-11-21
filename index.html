@@ -2,11 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="OUHINe-e_o64c-f8mleab-t5-xlZ7SMXgLVgi4O1Hpk" />
-
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -15,8 +10,23 @@
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-P5C8B2JB');</script>
+        })(window, document, 'script', 'dataLayer', 'GTM-KQB6RG5H');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSX37V14BN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NSX37V14BN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="0s_vQrvuGvQaFi_ug7jcQWwp35Vv9UhhTrC_Ewq0MRE" />
 
     <meta name="description"
         content="A EpicEats is a combination of different types of foods served together, typically as a single course during a mealtime. A well-balanced EpicEats usually includes a variety of food groups, such as proteins, carbohydrates, fats, vitamins, and minerals.
@@ -26,10 +36,12 @@
     <meta name="keywords"
         content="Combination,Food groups,Nutrients,Balanced,Preparation,Presentation,Culture,Dietary ,restrictions,Personal preferences,Occasion,Taste,Smell,Sight,Protein,Carbohydrates,Fats,Vitamins,Minerals,Breakfast,Lunch,Dinner">
     <meta name="author" content="Sanskar">
+    <link rel="stylesheet" href="./CSS/nav.css">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="./CSS/utiliy.css">
     <link rel="stylesheet" href="./CSS/keyFrame.css">
-    <link rel="stylesheet" href="./CSS/media query.css">
+    <link rel="stylesheet" href="./CSS/mediaQuery.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <link rel="icon" type="image/x-icon" href="/Images/logo/logo.png">
 
     <!-- fontawsome cdn -->
@@ -41,7 +53,7 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5C8B2JB" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQB6RG5H" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -54,8 +66,8 @@
                 </a>
             </div>
             <div id="nav-container" class="d-flex justify-between align-center">
-                <ul id="navigation" class="d-flex">
-                    <li class="active"><a href="/" class="active">Home</a></li>
+                <ul class="d-flex">
+                    <li class="active"><a href="#" class="active">Home</a></li>
                     <li id="nav-menu">
                         <i class="fa-solid fa-book-open-reader"></i>
                         <a href="#menu">Menu</a>
@@ -65,6 +77,9 @@
                     <span id="item-num"></span>
                     <i id="shopping-cart" class="fa-solid fa-cart-shopping"></i>
                     <i id="profile-icon" class="fa-solid fa-user"></i>
+                    <ul id="login">
+                        <li><a href="./login.html"></a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -75,7 +90,7 @@
         <i id="menu-cross-icon" class="fa-regular fa-circle-xmark fa-xl"></i>
         <div id="add-cart-item"></div>
         <div id="checkout">
-            <button type="button" id="checkout-btn">Place your order</button>
+            <button type="button" id="place-order-btn">Place your order</button>
         </div>
     </div>
 
@@ -125,12 +140,23 @@
 
         <!-- Hero Right -->
         <div id="hero-right">
-            <video autoplay loop>
+            <video autoplay loop muted>
                 <source src="./Images/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
     </section>
+
+    <!-- Loader -->
+    <div id="loader" class="d-flex justify-center align-center">
+        <p></p>
+
+        <!-- Display Form -->
+        <div id="loader-form">
+            <h3>Enter your name</h3>
+            <input type="text" placeholder="UserName">
+            <button type="button" id="loader-btn">Click</button>
+        </div>
+    </div>
 
     <!-- Quote Section -->
     <section id="quote-container">
@@ -171,7 +197,8 @@
                         <h4>Bill Johnson</h4>
                         <p>Client</p>
                     </div>
-                    <p>“I wish that Factor made it easier to filter by dietary need, especially vegan-friendly dishes. I
+                    <p class="client-review">“I wish that Factor made it easier to filter by dietary need, especially
+                        vegan-friendly dishes. I
                         would also love to see the service offer a wider variety of cuisines.”</p>
                 </div>
                 <div class="client-item">
@@ -181,7 +208,8 @@
                         <h4>Ashley Fitzgerald</h4>
                         <p>Client</p>
                     </div>
-                    <p>"I think the service does a good job at offering a wide range of protein-types and vegetables.
+                    <p class="client-review">"I think the service does a good job at offering a wide range of
+                        protein-types and vegetables.
                         With
                         that said, I do wish it catered to a wider range of cuisines.”</p>
                 </div>
@@ -192,7 +220,8 @@
                         <h4>Aron Wilson</h4>
                         <p>Client</p>
                     </div>
-                    <p>"Mosaic Foods frozen meals are not your parents’ microwave dinners (or lunches, or breakfast!)!
+                    <p class="client-review">"Mosaic Foods frozen meals are not your parents’ microwave dinners (or
+                        lunches, or breakfast!)!
                         You
                         can taste the difference in the quality of fresh ingredients.!"</p>
                 </div>
@@ -223,7 +252,7 @@
             <div class="footer-card">
                 <p class="title">About EpicEats</p>
                 <ul class="footer-links">
-                    <li><a href="https://logiclearnner.blogspot.com/p/home.html">Blogs</a></li>
+                    <li><a href="https://logiclearnner.blogspot.com">Blogs</a></li>
                     <li><a href="https://sites.google.com/view/adproz/">Today's deals</a></li>
                     <li><a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy">Subscribe</a></li>
                     <li id="contact-form"><a href="#">Contact Us</a></li>

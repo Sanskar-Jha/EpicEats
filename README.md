@@ -2,7 +2,7 @@
 
 A EpicEats is a combination of different types of foods served together, typically as a single course during a mealtime. A well-balanced food meal usually includes a variety of food groups, such as proteins, carbohydrates, fats, vitamins, and minerals.
 
-### Version 1.0
+### Version 1.0.0
 - Food order website.
 
 ### Version 1.1
@@ -10,7 +10,7 @@ A EpicEats is a combination of different types of foods served together, typical
 2. Implement table booking system.
 3. Update in UI.
 
-### Version 2.0
+### Version 2.0.0
 1. Update in UI.
 2. Implement shopping cart functionality.
    - Add items to the shopping cart.
@@ -19,3 +19,13 @@ A EpicEats is a combination of different types of foods served together, typical
 
 3. Update menu items.
    - Implement filtering functionality.
+
+### Version 2.0.1
+1. Add product check out page.
+   - User can review their order summary.
+   - Add payment gateway.
+2. Add login or sign up page.
+3. Add dark mode.
+4. Add loading animation.
+5. Fix Bugs (Duplicate product entry).
+6. Save user cart products.

@@ -1,30 +1,3 @@
-/* .none {
-    display: none !important;
-}
-
-.block {
-    display: block !important;
-}
-
-.transition {
-    transition: 0.5s all ease-in-out;
-} */
-
-/* .red { */
-/* border: 2px solid red; */
-/* color: red; */
-/* background: #ffadad;*/
-/* } */
-
-/* .scale {
-    transform: scale(0.8);
-} */
-
-/* .zIndex { */
-/* z-index: -1;
-    position: fixed; */
-/* } */
-
 /* Media Queries */
 @media screen and (min-width: 1490px) {
 
@@ -186,7 +159,7 @@
         font-size: 1.5rem;
     }
 
-    #navigation li a {
+    #nav-container ul li a {
         font-size: 14px;
     }
 
@@ -220,16 +193,28 @@
     #join-community-email-input {
         width: 100%;
     }
-
-    #join-by-email label {
-        font-size: 1rem;
-    }
 }
 
 
 @media screen and (max-width: 410px) {
     #hero-right video {
         width: 100%;
+    }
+
+    #copy-right p {
+        font-size: 12px;
+    }
+
+    #hero-btn button,
+    #join-community-btn,
+    #submit-btn,
+    #place-order-btn,
+    #join-community-email,
+    #join-by-email label,
+    .client-review,
+    #quote p,
+    #p-primary p {
+        font-size: 14px;
     }
 }
 

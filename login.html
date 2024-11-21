@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Images/logo/logo.png">
+    <link rel="stylesheet" href="./CSS/nav.css">
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="./CSS/utiliy.css">
+    <link rel="stylesheet" href="./CSS/mediaQuery.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <title>EpicEats-Login</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="d-flex align-center">
+        <nav id="navbar" class="d-flex align-center">
+            <div id="nav-logo">
+                <a href="./index.html">
+                    <img src="/Images/logo/logo.png" alt="EpicEats">
+                </a>
+            </div>
+            <div id="nav-container" class="">
+                <ul class="">
+                    <li class="active"><a href="./index.html" class="">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Dark mode -->
+        <div>
+            <label style="color: white;" for="">Dark Mode</label>
+            <input type="checkbox" name="darkMode" id="dark-mode-toggle">
+            <label for="dark-mode-toggle" class="dark-mode-btn"></label>
+        </div>
+    </header>
+
+    <!-- Form -->
+    <div id="form-container">
+        <!-- Form buttons -->
+        <div id="form-btns">
+            <button type="button">Login</button>
+            <hr>
+            <button type="button">Sign up</button>
+        </div>
+
+        <!-- Login form -->
+        <form id="login-form" class="form" action="/">
+            <div>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Log in</button>
+            <p>Create account <a href="#">Sign up</a></p>
+        </form>
+
+        <!-- sign up form -->
+        <form id="signup-form" class="form" action="/">
+            <div>
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+
+        <span id="msg"></span>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer" class="d-flex justify-evenly">
+            <div class="footer-card">
+                <div id="footer-logo">
+                    <p>EpicEats</p>
+                </div>
+                <!-- Footer Icons -->
+                <div id="footer-icons" class="d-flex">
+                    <a href="https://github.com/Sanskar-Jha" target="_blank">
+                        <i class="fa-brands fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://youtube.com/@news_wave1?si=m1rggOJNdEHC7SJJ" target="_blank">
+                        <i class="fa-brands fa-youtube fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sanskar-jha-101a8823b/" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-card">
+                <p class="title">About EpicEats</p>
+                <ul class="footer-links">
+                    <li><a href="https://logiclearnner.blogspot.com">Blogs</a></li>
+                    <li><a href="https://sites.google.com/view/adproz/">Today's deals</a></li>
+                    <li><a href="https://youtube.com/@Loveduet93?si=5Gu0G9TZiFG6JAhy">Subscribe</a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <p class="title">Learn More</p>
+                <ul class="footer-links">
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Copy Right Section -->
+        <div id="copy-right">
+            <p>Copyright &copy; EpicEats. All rights reserved!</p>
+        </div>
+    </footer>
+
+    <script src="./JavaScript/login.js"></script>
+</body>
+
+</html>

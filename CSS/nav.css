@@ -1,0 +1,148 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Moderustic:wght@300..800&family=Oswald:wght@200..700&display=swap');
+
+/* Navigfation Section */
+header {
+    /* background: #6e6e6e; */
+    background: #31b18d;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    font-family: "Oswald", sans-serif;
+}
+
+#nav-logo a img {
+    width: 7rem;
+    border-radius: 12px;
+    /* filter: drop-shadow(0px 0px 15px white); */
+    /* box-shadow: 0px 0px 16px #31b18d; */
+}
+
+#nav-logo:hover {
+    /* transition: all 0.5s; */
+    /* transform: rotate(360deg); */
+    /* transform: rotate3d(1, 1, 1, 360deg); */
+}
+
+#nav-container {
+    width: 43%;
+}
+
+#nav-container ul {
+    list-style: none;
+    gap: 22px;
+    align-items: center;
+}
+
+#nav-container ul li {
+    position: relative;
+    cursor: pointer;
+}
+
+#nav-container ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#nav-menu i {
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 7px;
+}
+
+#navbar ul li::before {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    right: 0;
+    bottom: 28px;
+    transition: all 0.5s;
+}
+
+#navbar ul li:hover::before {
+    width: 100%;
+}
+
+#navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: all 0.5s;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+}
+
+#navbar ul li a.active::after {
+    width: 100%;
+}
+
+#navbar ul li.active::before {
+    width: 100%;
+}
+
+#shopping-cart,
+#profile-icon {
+    color: white;
+    font-size: 1.5rem;
+    gap: 10px;
+}
+
+#login {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    width: max-content;
+    display: none;
+}
+
+#login li {
+    list-style: none;
+    cursor: pointer;
+}
+
+#login a {
+    text-decoration: none;
+    color: black !important;
+    text-transform: capitalize !important;
+}
+
+#profile-icon:hover+#login {
+    display: block;
+}
+
+#login:hover {
+    display: block;
+}
+
+#cart {
+    gap: 16px;
+    position: relative;
+}
+
+#item-num {
+    position: relative;
+    bottom: 15px;
+    left: 50px;
+    background: red;
+    color: white;
+    font-size: 14px;
+    /* flex: 0 0 21%; */
+    width: 100%;
+    padding: 3px;
+    z-index: 1;
+    /* display: none; */
+}

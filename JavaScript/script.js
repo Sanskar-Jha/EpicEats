@@ -220,17 +220,18 @@ menu.forEach(function (item, buttonId) {
 
 // Adding items to the cart
 const addCartItem = document.getElementById('add-cart-item');
-const cartItems = []; // Array to store cart items
+const arrCartItems = []; // Array to store cart items
 const itemNum = document.getElementById('item-num');
 itemNum.style.display = 'none';
-let cartItemNotificationNum = 0;
 
 function addToCart(buttonId) {
     // Find the corresponding item in the menu array based on index(button)
     const cartData = menu[buttonId];
+    cartData.cartId = buttonId;
 
     itemNum.style.display = 'block';
-    itemNum.innerText = ++cartItemNotificationNum;
+    itemNum.innerText = arrCartItems.length;
+    // itemNum.innerText = ++cartItemNotificationNum;
 
     if (!cartData) {
         // console.error("Invalid item index:", buttonId);
@@ -238,12 +239,17 @@ function addToCart(buttonId) {
     }
 
     // Check if item already exists in cart
-    // const existingItem = cartItems.find(item => item.id === cartData.id); // Assuming unique IDs
+    const existingItem = arrCartItems.find(item => {
+        return item.cartId === buttonId;
+    });
 
-    // if (existingItem) {
-    //     existingItem.quantity++; // Increase quantity for existing item
-    // } else {
-    //     cartItems.push({ ...cartData, quantity: 1 }); // Add new item with quantity 1
+    if (existingItem) {
+        existingItem.quantity++; // Increase quantity for existing item
+        updateCartDisplay();
+        return;
+    }
+    // else {
+    //     arrCartItems.push({ ...cartData, quantity: 1 }); // Add new item with quantity 1
     // }
 
     addCartItem.innerHTML += `<div class="cart-item d-flex align-center">
@@ -268,16 +274,21 @@ function addToCart(buttonId) {
                                 </div>`;
 
     // Add items to cart
-    cartItems.push(cartData);
+    arrCartItems.push(cartData);
     updateCartDisplay();
 }
+
+const loaderInput = document.querySelector('#loader-form input');
 
 // Function to update cart display in the UI
 function updateCartDisplay() {
     // Clear previous cart items before rendering
     addCartItem.innerHTML = '';
+    itemNum.style.display = 'block';
+    itemNum.innerText = arrCartItems.length;
 
-    if (cartItems.length === 0) {
+    if (arrCartItems.length === 0) {
+        itemNum.style.display = 'none';
         addCartItem.innerHTML = '<p>Your cart is empty.</p>';
         document.getElementById('checkout').style.display = 'none';
         return;
@@ -285,8 +296,8 @@ function updateCartDisplay() {
 
     document.getElementById('checkout').style.display = 'block';
 
-    // Generate cart item HTML based on cartItems array
-    cartItems.forEach(function (cartItem, id) {
+    // Generate cart item HTML based on arrCartItems array
+    arrCartItems.forEach(function (cartItem, id) {
         addCartItem.innerHTML += `<div class="cart-item d-flex align-center">
                                     <div class="cart-item-img">
                                     <img src="${cartItem.img}" alt="${cartItem.name}">
@@ -305,17 +316,20 @@ function updateCartDisplay() {
                                     </div>
                                 </div>`;
     });
+
+    localStorage.setItem(loaderInput.value == '' ? "cart" : loaderInput.value, JSON.stringify(arrCartItems));
 }
 
 // Function to handle increase in quantity
 function addQuantity(plusButtonId) {
     const itemId = plusButtonId.split('-')[0]; // Extract item ID from button ID
     if (itemId !== -1) {
-        cartItems[itemId].quantity++;
+        arrCartItems[itemId].quantity++;
         updateCartDisplay();
-    } else {
-        // console.error("Couldn't find item with ID:", itemId);
     }
+    // else {
+    // console.error("Couldn't find item with ID:", itemId);
+    // }
 }
 
 // Function to handle decrease in quantity
@@ -323,35 +337,37 @@ function subtractQuantity(minusButtonId) {
     const itemId = minusButtonId.split('-')[0];
 
     if (itemId !== -1) {
-        if (cartItems[itemId].quantity > 1) {
-            cartItems[itemId].quantity--;
+        if (arrCartItems[itemId].quantity > 1) {
+            arrCartItems[itemId].quantity--;
         } else {
-            cartItems.splice(itemId, 1); // Remove item from cart if quantity reaches 0
-            itemNum.innerText = --cartItemNotificationNum;
+            arrCartItems.splice(itemId, 1); // Remove item from cart if quantity reaches 0
+            itemNum.innerText = arrCartItems.length;
 
             if (itemNum.innerText == 0) {
                 itemNum.style.display = 'none';
             }
         }
         updateCartDisplay();
-    } else {
-        // console.error("Couldn't find item with ID:", itemId);
     }
+    //  else {
+    // console.error("Couldn't find item with ID:", itemId);
+    // }
 }
 
 // Function to handle delete item from cart
 function cartItemDel(delButtonId) {
     if (delButtonId !== -1) {
-        cartItems.splice(delButtonId, 1);
-        itemNum.innerText = --cartItemNotificationNum;
+        arrCartItems.splice(delButtonId, 1);
+        itemNum.innerText = arrCartItems.length;
 
         if (itemNum.innerText == 0) {
             itemNum.style.display = 'none';
         }
         updateCartDisplay();
-    } else {
-        // console.error("Couldn't find item with ID:", itemId);
     }
+    // else {
+    // console.error("Couldn't find item with ID:", itemId);
+    // }
 }
 
 updateCartDisplay();
@@ -367,12 +383,12 @@ document.getElementById('menu-cross-icon').addEventListener('click', () => {
 });
 
 // click on checkout button to open contact form
-document.getElementById('checkout-btn').addEventListener('click', () => {
-    document.getElementById('form-section').style.transform = 'translateY(0rem)';
-    document.getElementById('form-section').style.visibility = 'visible';
-    document.getElementById('add-to-cart').style.transform = 'translateX(32rem)';
-    document.documentElement.style.overflow = 'hidden';
-    document.body.scroll = "no";
+const checkoutBtn = document.getElementById('place-order-btn');
+
+checkoutBtn.addEventListener('click', () => {
+    sessionStorage.setItem("cart", JSON.stringify(arrCartItems));
+    window.location = "checkout.html";
+    // document.body.scroll = "no";
 });
 
 // Menu item filter
@@ -381,7 +397,7 @@ const cartDatas = document.querySelectorAll('.menu-card-item');
 
 menuBtns.forEach((menuBtn) => {
     menuBtn.addEventListener('click', (e) => {
-        const filter = e.target.dataset.filter; //provide button value
+        const filter = e.target.dataset.filter; // provide button value
         cartDatas.forEach((cartData) => {
             if (cartData.classList.contains(filter)) {
                 cartData.style.display = 'block';
@@ -509,4 +525,62 @@ document.getElementById('form-cross-icon').addEventListener('click', () => {
     document.getElementById('form-section').style.visibility = 'hidden';
     document.documentElement.style.overflow = 'scroll';
     document.body.scroll = "yes";
+});
+
+// Loader
+const loader = document.getElementById('loader');
+const loaderProgressBar = document.querySelector('#loader p');
+const loaderForm = document.getElementById('loader-form');
+const login = document.querySelector('#login li a');
+let loaderProgress = 0;
+loaderForm.style.display = "none";
+
+function updateProgress() {
+    if (loaderProgress < 100) {
+        loaderProgress++;
+        loaderProgressBar.innerText = loaderProgress + '%';
+        loaderProgressBar.style.width = loaderProgress + '%';
+        setTimeout(updateProgress, 100);
+    }
+
+    if (loaderProgress == 100) {
+        loaderProgressBar.style.display = "none";
+        loaderForm.style.display = "block";
+        document.getElementById('loader-btn').addEventListener("click", loaderFormVal);
+    }
+}
+
+function loaderFormVal() {
+    if (loaderInput.value == '' || loaderInput.value == "cart") {
+        login.innerText = "Login in";
+        localStorage.clear();
+    }
+    else {
+        login.innerText = loaderInput.value;
+    }
+
+    for (const key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            if (loaderInput.value == key) {
+                const getUserCartData = JSON.parse(localStorage.getItem(key));
+                arrCartItems.push.apply(arrCartItems, getUserCartData);
+                updateCartDisplay();
+                loaderForm.innerHTML = `<p>Welcome Back ${loaderInput.value}</p>`;
+            }
+        }
+    }
+
+    loaderInput.style.display = "none";
+    loader.style.display = "none";
+}
+
+window.onload = function () {
+    updateProgress();
+};
+
+// Play hero section video
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        document.querySelector('#hero-right video').play();
+    }, 1000);
 });
