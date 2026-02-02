@@ -210,7 +210,7 @@ const menuCard = document.getElementById('menu-card');
 menu.forEach(function (item, buttonId) {
     menuCard.innerHTML += `<div class="menu-card-item ${item.category}">
                             <div class="item-img">
-                                <img src="${item.img}" alt="${item.name}">
+                                <img src="${item.img}" style="width: 100px; height: 100px;" loading="lazy" alt="${item.name}">
                             </div>
                             <h4 class="item-name">${item.name}</h4>
                             <h5 class="item-price">${item.price} Rs</h5>
@@ -254,7 +254,7 @@ function addToCart(buttonId) {
 
     addCartItem.innerHTML += `<div class="cart-item d-flex align-center">
                                     <div class="cart-item-img">
-                                        <img src="${cartData.img}" alt="${cartData.name}">
+                                        <img src="${cartData.img}" style="width: 50px; height: 50px;" loading="lazy" alt="${cartData.name}">
                                     </div>
                                     <div class="cart-item-data">
                                         <p>${cartData.name}</p>
@@ -300,7 +300,7 @@ function updateCartDisplay() {
     arrCartItems.forEach(function (cartItem, id) {
         addCartItem.innerHTML += `<div class="cart-item d-flex align-center">
                                     <div class="cart-item-img">
-                                    <img src="${cartItem.img}" alt="${cartItem.name}">
+                                    <img src="${cartItem.img}" style="width: 50px; height: 50px;" loading="lazy" alt="${cartItem.name}">
                                     </div>
                                     <div class="cart-item-data">
                                     <p>${cartItem.name}</p>
@@ -574,9 +574,7 @@ function loaderFormVal() {
     loader.style.display = "none";
 }
 
-window.onload = function () {
-    updateProgress();
-};
+updateProgress();
 
 // Play hero section video
 window.addEventListener('load', function () {

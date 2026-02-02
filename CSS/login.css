@@ -122,6 +122,10 @@ header {
 }
 
 /* Dark mode */
+#dark-mode-container {
+    gap: 8px;
+}
+
 .dark-mode-btn {
     position: relative;
     display: inline-block;
@@ -145,11 +149,11 @@ header {
 }
 
 
-input[type="checkbox"]:checked + .dark-mode-btn:after {
+input[type="checkbox"]:checked+.dark-mode-btn:after {
     translate: 2rem 0;
 }
 
-input[type="checkbox"]:checked + .dark-mode-btn {
+input[type="checkbox"]:checked+.dark-mode-btn {
     background-color: rgb(69, 69, 69);
 }
 
